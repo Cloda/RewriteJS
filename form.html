@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		function lol(){
+			var form = document.forms[0];
+				var elems = form.elements.form;
+				for (var i =0; i < elems.length; i++){
+					if (elems[i].checked){
+						alert(elems[i].value)
+					}
+				}
+		}
+	</script>
+</head>
+<body>
+	<form class="section-task_exec_num" name="my">
+		<h5 class="section-task_exec_num_title">Задание номер 2</h5>
+		<p class="section-task_exec_num_content">Какое из этих событий произошло раньше всех?</p>
+		<div class="section-task_exec_num_answer">
+			<input value="1" type="radio" class="radiobox" id="radiobox" name="form">
+			<label for="radiobox"><i>установление во Франции якобинской диктатуры</i></label>
+		</div>
+		<div class="section-task_exec_num_answer">
+			<input value="2" type="radio" class="radiobox" id="radiobox" name="form">
+			<label for="radiobox"><i>арест и казнь Л.П. Берии</i></label>
+		</div>
+		<div class="section-task_exec_num_answer">
+			<input value="3" type="radio" class="radiobox" id="radiobox" name="form">
+			<label for="radiobox"><i>учреждение патриаршества на Руси</i></label>
+		</div>
+		<div class="section-task_exec_num_answer">
+			<input value="4" type="radio" class="radiobox" id="radiobox" name="form">
+			<label for="radiobox"><i>Октябрьская революция</i></label>
+		</div>	
+	</form>
+	<a href="#" onclick="lol()">lol</a>
+	
+</body>
+</html>

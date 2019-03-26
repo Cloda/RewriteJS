@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <!--<link href="snippets.css" rel="stylesheet"></link>-->
+  <link href="style.css" rel="stylesheet"></link>
+  <title>Slider</title>
+</head>
+<body> 
+	
+	<div id="app">
+	  <p>{{ message }}</p>
+	</div>
+	
+	<div id="app-2">
+  		<span v-bind:title="message">
+	    	Наведи на меня курсор на пару секунд,
+	    	чтобы увидеть динамически связанное значение title!
+  		</span>
+	</div>
+
+	<div id="app-3">
+	  	<span v-if="seen">Сейчас меня видно</span>
+	</div>
+
+	<div id="app-4">
+	  	<ol>
+	    	<li v-for="todo in todos">
+	     		{{ todo.text }}
+	    	</li>
+	  	</ol>
+	</div>
+
+	<div id="app-5">
+	  	<p>{{ message }}</p>
+	  	<button v-on:click="reverseMessage">Перевернуть сообщение</button>
+	</div>
+	
+	<div id="app-6">
+	 	<p>{{ message }}</p>
+	  	<input v-model="message">
+	</div>
+
+	<div id="app-7">
+	  	<ol>
+	    	<todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+
+	    	<todo-item v-for="item in groceryList1" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+	  	</ol>
+	</div>
+
+	<div id="app-8">
+  		<h1 v-once>{{ title }}</h1>
+  		<p>{{ sayHello() }} - <a v-bind:href="link">Google</a></p>
+  		<hr>
+  		<p v-html="finishedLink"></p>
+	</div>
+
+	<div id="app-9">
+	    <!-- 1) Show a "result" of 'not there yet' as long as "value" is not equal to 37 - you can change "value" with the buttons. Print 'done' once you did it -->
+	    <div>
+	        <p>Current Value: {{ value }}</p>
+	        <button v-on:click="value += 5">Add 5</button>
+	        <button v-on:click="value += 1">Add 1</button>
+	        <p>{{ result }}</p>
+	    </div>
+	    <!-- 2) Watch for changes in the "result" and reset the "value" after 5 seconds (hint: setTimeout(..., 5000) -->
+	    <div>
+	        <p>{{ value }}</p>
+	    </div>
+	</div>
+	<div id="app-10">
+		<ol>
+		<!--
+		  Теперь мы можем передать каждому компоненту todo-item объект
+		  с информацией о задаче, который будет динамически меняться.
+		  Мы также определяем для каждого компонента "key",
+		  значение которого мы разберём далее в руководстве.
+		-->
+		<todo-item
+			v-for="item in groceryList"
+			v-bind:todo="item"
+			v-bind:key="item.id">
+		 </todo-item>
+		</ol>
+	</div>
+
+	<div id="app-11">
+		<button-counter></button-counter>
+	</div>
+	
+	<div id="app-12">
+		<alert-box>
+	  		Произошло что-то плохое.
+		</alert-box>
+	</div>
+	<div id="app-13">
+		<input type="checkbox" id="checkbox" v-model="checked">
+		<label for="checkbox">{{ checked }}</label>
+	</div>
+	<div id="app-14">
+		<li v-for="item in items">{{ item }}</li>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="main.js"></script>
+</body>
+
+</html>
